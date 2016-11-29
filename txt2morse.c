@@ -56,9 +56,21 @@ void write_morse_char(FILE *outfile, short waveform[],
 
 /* LOOKUP TABLES */
 const char *message[] = {
-     "This is the help message.",
-     "This is the version message.",
-     "This is the error message."
+     /* MSG_HELP */
+     "\ntxt2morse -- Convert ASCII text to Morse-code audio\n\n"
+      "Usage: txt2morse [OPTION]... FILE...\n\n"
+      "Options:\n"
+      " -f, --frequency Set Morse audio frequency in Hz (default: 800)\n"
+      " -r, --rate      Set Morse rate in words per minute (default: 12)\n"
+      " -o, --output    Set name of output file\n\n"
+      "By default, the output filename is taken from the input file,\n"
+      "with .wav extension substituted.\n",
+
+     /* MSG_VERSION */
+     "txt2morse version 2.0 by Andrew A. Cashner (public domain)",
+
+     /* MSG_ERROR */
+     "An unknown error occurred."
 };
 const enum { MSG_HELP, MSG_VERSION, MSG_ERROR } msg_code;
 
@@ -201,14 +213,14 @@ int main(int argc, char *argv[])
 
      if (optind < argc) {
 	  if (argc - optind > 1) {
-	       fprintf(stderr, "Too many arguments.\n %s\n",
+	       fprintf(stderr, "Too many arguments.\n\n %s\n",
 		       message[MSG_HELP]);
 	       exit(EXIT_FAILURE);
 	  } else {
 	       strcpy(infile_name, argv[optind]);
 	  }
      } else {
-	  fprintf(stderr, "No input file specified. %s\n",
+	  fprintf(stderr, "No input file specified.\n\n %s\n",
 		  message[MSG_HELP]);
 	  exit(EXIT_FAILURE);
      }

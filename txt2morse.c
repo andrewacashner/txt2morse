@@ -4,9 +4,7 @@
  * 
  * Versions
  * 2.0 -- 2016-11-29 -- Add command-line options for setting frequency,
- *                      rate, and output file name;
- *                      set output format based on output file
- *                      extension
+ *                      rate, and output file name
  * 1.0 -- 2016-09 -- First release on GitHub
  * 
  * The program reads in text from a file,
@@ -173,7 +171,6 @@ int main(int argc, char *argv[])
      /* Process options:
       * - Optionally set frequency and rate
       * - Open files for input and output
-      * TODO -- set output file type based on extension given
       */
 
      while ((c = getopt_long(argc, argv, "hvf:r:o:",

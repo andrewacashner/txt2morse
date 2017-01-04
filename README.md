@@ -8,11 +8,9 @@ Defaults are 800 Hz frequency and 12 words per minute.
 
 ## Change Log
 
-----------     ---------------------------------------------------------
-2017-01-04     Version 2.0 with command-line options for 
-               filename, frequency, rate; improved program structure 
-2016-09        Version 1.0
----------      --------------------------------------------------------
+* 2017-01-04 -- Version 2.0
+    - Command-line options for filename, frequency, rate; improved program structure 
+* 2016-09-01 -- Version 1.0
 
 ## Usage Examples
 
